@@ -43,7 +43,7 @@ class FunctionSpacingSniff implements Sniff
 	 *
 	 * @return void
 	 */
-	public function process(File $phpcsFile, $stackPtr)
+	public function process(File $phpcsFile, $stackPtr): void
 	{
 		$tokens = $phpcsFile->getTokens();
 
@@ -153,7 +153,7 @@ class FunctionSpacingSniff implements Sniff
 				&& $tokens[$prevContent]['line'] === ($currentLine - 1)
 			) {
 				// Account for function comments.
-				$prevContent = $phpcsFile->findPrevious(T_WHITESPACE, ($tokens[$prevContent]['comment_opener'] - 1), null, true);
+				$prevContent = $phpcsFile->findPrevious(T_WHITESPACE, $tokens[$prevContent]['comment_opener'] - 1, null, true);
 			}
 
 			if ($tokens[$prevContent]['code'] === T_OPEN_CURLY_BRACKET) {
@@ -188,7 +188,7 @@ class FunctionSpacingSniff implements Sniff
 					break;
 				}
 
-				if ($tokens[($i - 1)]['line'] < $currentLine && $tokens[($i + 1)]['line'] > $currentLine) {
+				if ($tokens[$i - 1]['line'] < $currentLine && $tokens[$i + 1]['line'] > $currentLine) {
 					// This token is on a line by itself. If it is whitespace, the line is empty.
 					if ($tokens[$i]['code'] === T_WHITESPACE) {
 						$foundLines++;
@@ -216,17 +216,17 @@ class FunctionSpacingSniff implements Sniff
 				if ($prevContent === 0) {
 					$nextSpace = 0;
 				} else {
-					$nextSpace = $phpcsFile->findNext(T_WHITESPACE, ($prevContent + 1), $stackPtr);
+					$nextSpace = $phpcsFile->findNext(T_WHITESPACE, $prevContent + 1, $stackPtr);
 					if ($nextSpace === false) {
 						$nextSpace = ($stackPtr - 1);
 					}
 				}
 
 				if ($foundLines < $this->spacing) {
-					$padding = str_repeat($phpcsFile->eolChar, ($this->spacing - $foundLines));
+					$padding = str_repeat($phpcsFile->eolChar, $this->spacing - $foundLines);
 					$phpcsFile->fixer->addContent($nextSpace, $padding);
 				} else {
-					$nextContent = $phpcsFile->findNext(T_WHITESPACE, ($nextSpace + 1), null, true);
+					$nextContent = $phpcsFile->findNext(T_WHITESPACE, $nextSpace + 1, null, true);
 					$phpcsFile->fixer->beginChangeset();
 					for ($i = $nextSpace; $i < ($nextContent - 1); $i++) {
 						if (strpos($tokens[$i]['content'], "\n") !== false) {

@@ -127,7 +127,7 @@ class Foo
 	/**
 	 * {@inheritdoc}
 	 */
-	public function getPriority()
+	public function getPriority(): int
 	{
 		// should be run after the ElseIfFixer, NoEmptyStatementFixer and NoUselessElseFixer
 		return -25;

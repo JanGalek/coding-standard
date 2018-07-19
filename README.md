@@ -1,8 +1,11 @@
+# Forked
+I forked from [nette/coding-standard](https://github.com/nette/coding-standard)
+
 # Check & Fix Your Code with Nette Coding Standard
 
-[![Downloads this Month](https://img.shields.io/packagist/dm/nette/coding-standard.svg)](https://packagist.org/packages/nette/coding-standard)
-[![Build Status](https://travis-ci.org/nette/coding-standard.svg?branch=master)](https://travis-ci.org/nette/coding-standard)
-[![Latest Stable Version](https://img.shields.io/packagist/v/nette/coding-standard.svg)](https://github.com/nette/coding-standard/releases)
+[![Downloads this Month](https://img.shields.io/packagist/dm/galek/coding-standard.svg)](https://packagist.org/packages/galek/coding-standard)
+[![Build Status](https://travis-ci.org/JanGalek/coding-standard.svg?branch=master)](https://travis-ci.org/JanGalek/coding-standard)
+[![Latest Stable Version](https://img.shields.io/packagist/v/JanGalek/coding-standard.svg)](https://github.com/JanGalek/coding-standard/releases)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 
@@ -15,7 +18,7 @@ This package covers **part of [official rules](https://nette.org/en/coding-stand
 
 When you open [`/examples`](/examples) directory, all files you'll see are checked by this coding standard. The code might look invalid compared to Nette code you know, but it's only because this tool doesn't check it (yet).
 
-All **general rules** you can find in [`coding-standard-php56.neon`](/coding-standard-php56.neon) file.
+All **general rules** you can find in [`coding-standard-php56.yml`](/coding-standard-php56.yml) file.
 
 
 ## Install and Use
@@ -23,22 +26,22 @@ All **general rules** you can find in [`coding-standard-php56.neon`](/coding-sta
 
 ### Local Setup
 
-Installation into global folder named `nette-coding-standard`:
+Installation into global folder named `coding-standard`:
 
 ```
-composer create-project nette/coding-standard nette-coding-standard
+composer create-project galek/coding-standard
 ```
 
 Check coding standard:
 
 ```bash
-nette-coding-standard/ecs check src tests --config nette-coding-standard/coding-standard-php56.neon
+coding-standard/ecs check src tests --config coding-standard/coding-standard-php56.yml
 ```
 
 And fix it:
 
 ```bash
-nette-coding-standard/ecs check src tests --config nette-coding-standard/coding-standard-php56.neon --fix
+coding-standard/ecs check src tests --config coding-standard/coding-standard-php56.yml --fix
 ```
 
 ### Travis Setup
@@ -46,8 +49,8 @@ nette-coding-standard/ecs check src tests --config nette-coding-standard/coding-
 ```yaml
 # .travis.yml
 install:
-    - composer create-project nette/coding-standard temp/nette-coding-standard
+    - composer create-project galek/coding-standard temp/coding-standard
 
 script:
-    - temp/nette-coding-standard/ecs check src tests --config temp/nette-coding-standard/coding-standard-php56.neon
+    - temp/coding-standard/ecs check src tests --config temp/coding-standard/coding-standard-php56.yml
 ```

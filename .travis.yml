@@ -11,11 +11,11 @@ matrix:
 
 install:
     - composer install
-    - if [[ $COMPOSER_PROJECT != "" ]]; then composer create-project nette/coding-standard:dev-master temp/nette-coding-standard; fi
+    - if [[ $COMPOSER_PROJECT != "" ]]; then composer create-project galek/coding-standard:dev-master temp/coding-standard; fi
 
 script:
     - composer test
-    - if [[ $COMPOSER_PROJECT != "" ]]; then temp/nette-coding-standard/ecs check src examples --config temp/nette-coding-standard/coding-standard-php71.neon; fi
+    - if [[ $COMPOSER_PROJECT != "" ]]; then temp/coding-standard/ecs check src examples --config temp/coding-standard/coding-standard-php71.yml; fi
 
 notifications:
     email: false

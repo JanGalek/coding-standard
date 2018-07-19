@@ -11,8 +11,10 @@ use Symplify\EasyCodingStandard\Contract\Finder\CustomSourceProviderInterface;
 
 final class SourceProvider implements CustomSourceProviderInterface
 {
+
 	/**
 	 * @param string[] $source
+	 * @return IteratorAggregate
 	 */
 	public function find(array $source): IteratorAggregate
 	{
