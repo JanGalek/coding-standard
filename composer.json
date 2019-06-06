@@ -5,7 +5,8 @@
 		"php": "^7.1",
 		"symplify/easy-coding-standard": "^4.5",
 		"symplify/coding-standard": "^4.5",
-		"slevomat/coding-standard": "^4.6"
+		"slevomat/coding-standard": "^4.6",
+		"psr/simple-cache": "^1.0"
 	},
 	"require-dev": {
 		"tracy/tracy": "^2.4"
