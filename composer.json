@@ -3,9 +3,9 @@
 	"license": "MIT",
 	"require": {
 		"php": "^7.1",
-		"symplify/easy-coding-standard": "^4.5",
-		"symplify/coding-standard": "^4.5",
-		"slevomat/coding-standard": "^4.6",
+		"symplify/easy-coding-standard": "^6.0",
+		"symplify/coding-standard": "^6.0",
+		"slevomat/coding-standard": "^5.0",
 		"psr/simple-cache": "^1.0"
 	},
 	"require-dev": {
