@@ -136,8 +136,11 @@ services:
     PhpCsFixer\Fixer\Casing\NativeFunctionCasingFixer: ~
     # In the argument list, there must be one space after each comma, and there must no be a space before each comma
     PhpCsFixer\Fixer\FunctionNotation\MethodArgumentSpaceFixer: ~
-    # This sniff checks that there are two blank lines between functions declarations and single between signatures.
-    Nette\CodingStandard\Sniffs\WhiteSpace\FunctionSpacingSniff: ~
+    # This sniff checks that there are (number) blank lines between functions declarations and (number) between signatures.
+    PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\FunctionSpacingSniff:
+        spacing: 1
+        spacingBeforeFirst: 0
+        spacingAfterLast: 0
 
     # Classes - https://nette.org/en/coding-standard#toc-classes
 
