@@ -1,5 +1,6 @@
 {
 	"name": "galek/coding-standard",
+	"bin": ["ecs"],
 	"license": "MIT",
 	"require": {
 		"php": "^7.1",
