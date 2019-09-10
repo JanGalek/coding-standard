@@ -1,5 +1,5 @@
 parameters:
-    indentation: tab #tab
+    indentation: tab #tab / spaces
 
 services:
     Nette\CodingStandard\Finder\SourceProvider: ~
@@ -159,6 +159,8 @@ services:
     SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSpacingSniff: ~
     # Spaces should be properly placed in a function declaration.
     PhpCsFixer\Fixer\FunctionNotation\FunctionDeclarationFixer: ~
+    # Check spaces / tabs
+    PhpCsFixer\Fixer\Whitespace\IndentationTypeFixer: ~
     # In function arguments there must not be arguments with default values before non-default ones.
     PhpCsFixer\Fixer\FunctionNotation\NoUnreachableDefaultArgumentValueFixer: ~
 

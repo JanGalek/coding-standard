@@ -18,6 +18,7 @@
 		}
 	},
 	"scripts": {
+		"cs": "cs",
 		"test": [
 			"ecs check examples --config coding-standard-php56.yml",
 			"ecs check examples --config coding-standard-php70.yml",
